@@ -52,4 +52,31 @@ public class Timetable {
         return coachCounts;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder("Расписание на неделю:\n");
+
+        List<DayOfWeek> sortedDays = new ArrayList<>(timetable.keySet());
+        Collections.sort(sortedDays);
+
+        for (DayOfWeek day : sortedDays) {
+
+            result.append("\n- ").append(day.toString()).append(" -\n");
+
+            TreeMap<TimeOfDay, ArrayList<TrainingSession>> sessionsForDay = timetable.get(day);
+            for (Map.Entry<TimeOfDay, ArrayList<TrainingSession>> timeEntry : sessionsForDay.entrySet()) {
+                TimeOfDay time = timeEntry.getKey();
+                ArrayList<TrainingSession> sessions = timeEntry.getValue();
+
+                result.append(time.toString()).append(":\n");
+
+                for (TrainingSession session : sessions) {
+                    result.append("    - ").append(session.toString()).append("\n");
+                }
+            }
+        }
+
+        return result.toString();
+    }
+
 }

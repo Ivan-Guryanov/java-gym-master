@@ -43,6 +43,6 @@ public class TimeOfDay implements Comparable<TimeOfDay> {
 
     @Override
     public String toString() {
-        return hours + ":" + minutes;
+        return String.format("%d:%02d", hours, minutes);
     }
 }

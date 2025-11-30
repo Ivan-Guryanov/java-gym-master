@@ -37,6 +37,6 @@ public class TrainingSession {
     @Override
     public String toString() {
         return group + "\n" +
-                coach;
+               "      " +  coach;
     }
 }
