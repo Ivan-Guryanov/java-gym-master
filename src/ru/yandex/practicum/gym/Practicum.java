@@ -1,6 +1,6 @@
 package ru.yandex.practicum.gym;
 
-public class practicum {
+public class Practicum {
     public static void main(String[] args) {
         Timetable timetable = new Timetable();
 
