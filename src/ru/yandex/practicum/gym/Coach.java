@@ -41,4 +41,12 @@ public class Coach {
     public String getMiddleName() {
         return middleName;
     }
+
+    @Override
+    public String toString() {
+        String nameInitial = name.charAt(0) + ".";
+        String middleNameInitial = middleName.charAt(0) + ".";
+
+        return surname + " " + nameInitial + " " + middleNameInitial;
+    }
 }
